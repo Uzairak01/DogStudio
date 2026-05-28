@@ -1,16 +1,49 @@
-# React + Vite
+# Dog Studio Clone
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React + Vite portfolio landing page inspired by Dog Studio.
 
-Currently, two official plugins are available:
+This project uses a fullscreen scroll experience with an interactive 3D dog model rendered in `three.js` via `@react-three/fiber` and `@react-three/drei`.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- 3D dog model with animated entrance and scroll-driven camera movement
+- Custom matcap shader transitions on hover over project titles
+- GSAP ScrollTrigger animation and interactivity
+- Responsive full-page layout with background image grid and content sections
+- Built with React 19, Vite, Three.js, GSAP, and React Three Fiber
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Getting started
 
-## Expanding the ESLint configuration
+```bash
+cd vite-project
+npm install
+npm run dev
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Open the local development server at `http://localhost:5173`.
+
+## Scripts
+
+- `npm run dev` - start Vite development server
+- `npm run build` - build production assets
+- `npm run preview` - preview production build locally
+- `npm run lint` - run ESLint across the project
+
+## Project structure
+
+- `src/App.jsx` - main page layout and DOM structure
+- `src/components/dog.jsx` - 3D scene setup, GLTF model loading, GSAP animations, and hover interactions
+- `public/` - static assets including textures, images, and 3D model files
+
+## Dependencies
+
+- `react`, `react-dom`
+- `@react-three/fiber`
+- `@react-three/drei`
+- `three`
+- `gsap`
+- `@gsap/react`
+
+## Notes
+
+The app uses a mix of standard React layout and a fixed `<Canvas>` for the 3D experience. Interactive hover states are mapped to title elements to update the model's matcap textures dynamically.
